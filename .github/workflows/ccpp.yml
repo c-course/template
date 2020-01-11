@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: check cmake
-      run: ls /usr/bin/cmake*
+      run: find /usr -name "cmake*"
     - name: install latest cmake
       run: sudo -H pip3 install cmake
     - name: configure
