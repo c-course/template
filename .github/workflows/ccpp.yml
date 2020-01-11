@@ -9,11 +9,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: check cmake version
-      run: cmake --version
     - name: configure
       run: cmake -Bbuild -G 'Unix Makefiles'
     - name: build
-      run: cmake --build build
+      run: cmake --build build -- VERBOSE=1
     - name: test
       run: cd build && ctest
