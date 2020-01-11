@@ -6,13 +6,13 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v1
+    - name: check cmake
+      run: ls /usr/bin/cmake*
     - name: install latest cmake
-      run: |
-        sudo apt install -y python3-pip
-        sudo -H pip3 install cmake
+      run: sudo -H pip3 install cmake
     - name: configure
       run: cmake -Bbuild -G 'Unix Makefiles'
     - name: build
