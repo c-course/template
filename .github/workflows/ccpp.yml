@@ -5,16 +5,12 @@ on: [push]
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v1
     - name: check cmake version
       run: cmake --version
-    - name: check cmake
-      run: find /usr -type f -name "cmake*"
-    - name: install latest cmake
-      run: sudo -H pip3 install cmake
     - name: configure
       run: cmake -Bbuild -G 'Unix Makefiles'
     - name: build
