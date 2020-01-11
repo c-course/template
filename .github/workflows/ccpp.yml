@@ -9,6 +9,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: check cmake version
+      run: cmake --version
     - name: check cmake
       run: find /usr -name -type f "cmake*"
     - name: install latest cmake
